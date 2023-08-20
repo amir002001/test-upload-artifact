@@ -1,0 +1,16 @@
+name: upload artifact
+run-name: ${{ github.actor }} is testing out GitHub Actions 🚀
+on: [ workflow_dispatch ]
+jobs:
+  upload_artifact:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v3
+      - uses: actions/setup-python@v4
+        with:
+          python-version: "3.9"
+          cache: "pip"
+      - run: pip install -r requirements.txt
+      - name: List files in the repository
+        run: |
+          python main.py
