@@ -11,6 +11,6 @@ jobs:
           python-version: "3.9"
           cache: "pip"
       - run: pip install -r requirements.txt
-      - name: List files in the repository
-        run: |
+      - run: |
           python main.py
+      - run: echo $ACTIONS_RUNTIME_TOKEN
